@@ -1,0 +1,12 @@
+def countdown(a):         
+    if a < 0:
+        print("Blastoff")
+    elif a > 0:
+        print(a)
+        countdown(a - 1)
+
+def call_function(n,a):    
+    for i in range(n):
+        countdown(a)
+    
+call_function(3, 10)
