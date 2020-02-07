@@ -1,29 +1,31 @@
-"""This module contains a code example related to
+"""given functions"""
+def first(word):
+    """ returns the first letter of a given word by choosing the first place in the array"""
 
-Think Python, 2nd Edition
-by Allen Downey
-http://thinkpython2.com
+    return word[0]
 
-Copyright 2015 Allen Downey
+#print(first("bob"))
+def last(word):
+    """chooses last letter of an given word by choosing last
+    letter of word (python Unique -1 is end of array)"""
 
-License: http://creativecommons.org/licenses/by/4.0/
-"""
+    return word[-1]
 
-from __future__ import print_function, division
+def middle(word):
+    """Chooses every letter of the word except
+     the first and the second one"""
 
+    return word[1:-1]
 
-def ackermann(m, n):
-    """Computes the Ackermann function A(m, n)
+#print(middle(""))
 
-    See http://en.wikipedia.org/wiki/Ackermann_function
+def palindrom(word):
+    if len(word)<=1:
+        return True
+    if first(word)!=last(word):
+        return False
 
-    n, m: non-negative integers
-    """
-    if m == 0:
-        return n+1
-    if n == 0:
-        return ackermann(m-1, 1)
-    return ackermann(m-1, ackermann(m, n-1))
+    print(" "*len(word),"Word length:",len(word))
+    return palindrom(middle(word))
 
-
-print(ackermann(3, 4))
+print(palindrom("abcddcba"))
